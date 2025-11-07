@@ -9,13 +9,14 @@ const Notedthing = ({ data, setdata }) => {
             key={idx}
             className="bg-white rounded-2xl  flex flex-col justify-between h-80 p-4"
           >
-            <div className="bg-amber-200 p-3 font-medium overflow-y-auto overflow-x-hidden rounded-xl flex-1">
+            <div className="bg-amber-200 p-3 font-medium rounded-xl flex-1 overflow-y-auto wrap-break-word  overflow-x-hidden">
+
               <h2 className="text-xl mb-2 font-semibold">{elem.title}</h2>
               <p className="whitespace-pre-wrap text-sm">{elem.detail}</p>
             </div>
 
             <div className="flex justify-between items-center mt-3">
-              <span className="text-sm text-gray-800">12 MAY, 2021</span>
+              <span className="text-sm text-gray-800">{new Date().toLocaleDateString("en-GB")}</span>
               <img
                 className="h-6 cursor-pointer"
                 src="./public/pencil.png"
