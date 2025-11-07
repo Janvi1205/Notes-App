@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ADDNOTE = ({data,setdata}) => {
+const ADDNOTE = ({data,setdata,onClose}) => {
     const [title, settitle] = useState("")
     const [detail, setdetail] = useState("")
 
@@ -16,6 +16,7 @@ const ADDNOTE = ({data,setdata}) => {
 
         settitle(' ')
         setdetail(' ')
+        onClose();
 
         console.log(copydata)
 
@@ -37,7 +38,7 @@ const ADDNOTE = ({data,setdata}) => {
                             onChange={(e) => { setdetail(e.target.value) }}
                             className="  border-2 h-80 rounded-lg p-4" placeholder="Enter the note" id=""></textarea>
 
-                        <button className="-mt-8 rounded-2xl bg-amber-950 text-white p-1">AddIt</button>    
+                        <button  className="-mt-8 rounded-2xl bg-amber-950 text-white p-1">AddIt</button>    
                     </form>
                 </div>
 

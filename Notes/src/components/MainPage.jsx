@@ -6,6 +6,7 @@ import Notesform from "./Notesform"
 
 const MainPage = () => {
   const[data,setdata]=useState([])
+
   return (
     <div className="flex h-screen">
       {/* Left sidebar */}
