@@ -1,13 +1,25 @@
 import { useState } from "react";
 
-const ADDNOTE = () => {
+const ADDNOTE = ({data,setdata}) => {
     const [title, settitle] = useState("")
     const [detail, setdetail] = useState("")
+
+    
 
     function handlesubmit(e)
     {
         e.preventDefault();
-        console.log(title, detail);
+        const copydata=[...data]
+        copydata.push({title, detail})
+
+        setdata(copydata)
+
+        settitle(' ')
+        setdetail(' ')
+
+        console.log(copydata)
+
+        
 
     }
     return (

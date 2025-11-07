@@ -1,6 +1,6 @@
 import { useState } from "react"
 import ADDNOTE from "./ADDNOTE"
-const Notesform = () => {
+const Notesform = ({data,setdata}) => {
 
    const[Addnote,setAddnote]=useState(false);
   return (
@@ -12,7 +12,7 @@ const Notesform = () => {
           onClick={()=>{setAddnote(true)}}
         className="h-9" src="./public/add.png" alt="" />
       </div>
-      {Addnote && <ADDNOTE onClose={() => setAddnote(false)} />}
+      {Addnote && <ADDNOTE data={data} setdata={setdata} onClose={() => setAddnote(false)} />}
       
     </div>
 
