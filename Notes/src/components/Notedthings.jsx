@@ -17,11 +17,7 @@ const Notedthing = ({ data, setdata }) => {
 
             <div className="flex justify-between items-center mt-3">
               <span className="text-sm text-gray-800">{new Date().toLocaleDateString("en-GB")}</span>
-              <img
-                className="h-6 cursor-pointer"
-                src="./public/pencil.png"
-                alt="Edit"
-              />
+             
             </div>
           </div>
         ))}

@@ -13,7 +13,7 @@ const ADDNOTE = ({data,setdata,onClose}) => {
         copydata.push({title, detail})
 
         setdata(copydata)
-
+        
         settitle(' ')
         setdetail(' ')
         onClose();

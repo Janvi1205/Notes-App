@@ -1,11 +1,24 @@
 // MainPage.jsx
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Notedthing from "./Notedthings"
 import Notesform from "./Notesform"
 
 
+
 const MainPage = () => {
   const[data,setdata]=useState([])
+  useEffect(() => {
+    const savedNotes = localStorage.getItem("notes");
+    if (savedNotes) {
+      setdata(JSON.parse(savedNotes));
+    }
+  }, []);
+
+  // ✅ Save notes to localStorage whenever data changes
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(data));
+  }, [data]);
+
 
   return (
     <div className="flex h-screen">
