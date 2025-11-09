@@ -10,7 +10,7 @@ const ADDNOTE = ({data,setdata,onClose}) => {
     {
         e.preventDefault();
         const copydata=[...data]
-        copydata.push({title, detail})
+        copydata.push({title, detail,date: new Date().toLocaleDateString("en-GB") })
 
         setdata(copydata)
         
@@ -28,7 +28,8 @@ const ADDNOTE = ({data,setdata,onClose}) => {
             <div className="fixed flex inset-0  items-center justify-center bg-black/50 z-50">
                 <div className="bg-white p-6 rounded-2xl w-[500px] h-140 ">
                     <h1 className="flex justify-center font-bold text-2xl">Add a Note</h1>
-                    <form onSubmit={(e)=>handlesubmit(e)}  className=" flex flex-col mt-10 gap-10" action="">
+                    <form onSubmit={(e)=>handlesubmit(e)}  className=" relative flex flex-col mt-10 gap-10" action="">
+                        <img onClick={onClose} className="h-10 w-10 -mt-20 ml-104 absolute" src="./public/cross.png" alt="" />
                         <input
                             value={title}
                             onChange={(e) => { settitle(e.target.value) }}
